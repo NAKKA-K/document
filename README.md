@@ -4,5 +4,6 @@
 
 - AndroidStudio2.3
 - Git
+- C Pointer
 
 です。
