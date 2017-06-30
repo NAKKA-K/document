@@ -11,18 +11,18 @@
 
 
 ## 変数
-date="`date +%H`" #date変数に``で囲んだコマンドの戻りテキストを代入している。""で囲むことによって安全策を実施している。
-if [ "$date" == 12 ]; then #""で囲むことによって、変数の中身が無くてもエラーにならない
-  echo "${date}"
-fi
+	date="`date +%H`" #date変数に``で囲んだコマンドの戻りテキストを代入している。""で囲むことによって安全策を実施している。
+	if [ "$date" == 12 ]; then #""で囲むことによって、変数の中身が無くてもエラーにならない
+	  echo "${date}"
+	fi
 
 
 ## if
-if [ A == A ] && [ B == B ]; then #2回のコールで実行される
-  echo 'true'
-elif [ A == A -a B == B ]; then #オプションとしてのANDなので、コールが一回
-  echo 'true'
-else
-  echo 'false'
-fi
+	if [ A == A ] && [ B == B ]; then #2回のコールで実行される
+	  echo 'true'
+	elif [ A == A -a B == B ]; then #オプションとしてのANDなので、コールが一回
+	  echo 'true'
+	else
+	  echo 'false'
+	fi
 
