@@ -45,8 +45,6 @@
 ### git commit stageからコミット履歴に追加
 	-a 作業dirからコミット履歴に追加
 
-### bash file.sh shellを実行
-
 ### git add 作業dirからstageに追加
 	--dry-run 追加されるファイルを列挙(予行演習)(-n)
 
