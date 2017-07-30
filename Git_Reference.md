@@ -14,7 +14,7 @@
 
 ## リモートリポジトリにpushする前にすること
 ### git pull
-	git pull origin pullしたいリモートブランチ名:ローカルブランチ名
+	git pull origin [pullしたいリモートブランチ名:ローカルブランチ名]
 
 	pullするとローカルに変更がない場合、fast-forword-margeされる。その場合、そのままpushできる。
 	ローカルに変更があった場合、競合する。競合したときはファイルの
@@ -33,22 +33,37 @@
 	この状態からfetchした内容をローカルに統合する場合は、FETCH_HEADをmarge、又はpullを実行します。
 	pullとは内部でfetch + margeをしています。そのためmargeと同じ履歴になります。
 
+### git diff [origin/master]
+	git fetch でリモートリポジトリの内容を取得した後、このコマンドを使用することでカレントブランチの内容との差分を表示できる。
+	masterと書かれている部分を別のブランチ名に変更すると、そのブランチとの差分を見ることができる。
 
-## その他のコマンド
-### echo 文字の出力
-	-n 最後の改行を除く
-	>> ファイルの最後に追加
 
-### git diff 作業dirとstageの変更点を表示
-	--staged ステージングエリアとコミット履歴の変更点を表示(-s)
+## 基本的に使うコマンド
+### git branch
+	ローカルリポジトリに存在するブランチの一覧を表示することができる。
+	--all リモートブランチの一覧も同時に表示する。
 
-### git commit stageからコミット履歴に追加
-	-a 作業dirからコミット履歴に追加
+	git branch [ブランチ名] でブランチを作成する。
+	-d 指定したブランチを削除する。
 
-### git add 作業dirからstageに追加
+### git checkout [ブランチ名]
+	指定したブランチに移動できる。
+	-b git checkout -b [ブランチ名] で指定したブランチを作成して移動する。
+
+### git add
+	作業dirからstageに追加
 	--dry-run 追加されるファイルを列挙(予行演習)(-n)
 
-### git log    コミット履歴を表示
+### git commit
+	stageからコミット履歴に追加
+	-a 作業dirからコミット履歴に追加
+
+### git diff
+	作業dirとstageの変更点を表示
+	--staged ステージングエリアとコミット履歴の変更点を表示(-s)
+
+### git log
+	コミット履歴を表示
 	--shortstat コミットでの変更点を表示
 	--pretty=oneline onelieを使用した場合省略される、SHA1IDを詳細表示する
 	--graph ブランチが視覚化される
