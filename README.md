@@ -3,7 +3,9 @@
 現在の要素は
 
 - AndroidStudio2.3
-- Git
+- Git(/Github)
 - C Pointer
+- Shell(Bash)
+- Python3
 
 です。
